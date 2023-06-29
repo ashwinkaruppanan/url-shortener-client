@@ -14,7 +14,7 @@ const Dashboard = () => {
   const [propData, setPropData] = useState();
   let reverseData = allLinksData.reverse();
 
-  const api = "https://reago.up.railway.app";
+  const api = "https://reago-backend.up.railway.app";
   useEffect(() => {
     const getData = async () => {
       try {

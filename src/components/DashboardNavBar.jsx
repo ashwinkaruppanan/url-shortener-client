@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const DashboardNavBar = () => {
-  const api = "https://reago.up.railway.app";
+  const api = "https://reago-backend.up.railway.app";
   const navigate = useNavigate();
 
   const ref = useRef();

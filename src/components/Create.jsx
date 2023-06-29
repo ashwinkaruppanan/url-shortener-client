@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Create = () => {
   const navigate = useNavigate();
-  const api = "https://reago.up.railway.app";
+  const api = "https://reago-backend.up.railway.app";
 
   const [error, setError] = useState("");
 

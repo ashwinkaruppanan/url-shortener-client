@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const Redirect = () => {
   const [urlError, setUrlError] = useState(false);
-  const api = "https://reago.up.railway.app";
+  const api = "https://reago-backend.up.railway.app";
 
   useEffect(() => {
     const checkUrl = async () => {

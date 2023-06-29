@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const api = import.meta.env.VITE_API_URL;
+  const api = "https://reago-backend.up.railway.app";
   const navigate = useNavigate();
 
   useEffect(() => {

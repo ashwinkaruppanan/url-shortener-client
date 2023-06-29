@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Signup = () => {
   const navigate = useNavigate();
-  const api = "https://reago.up.railway.app";
+  const api = "https://reago-backend.up.railway.app";
 
   useEffect(() => {
     if (localStorage.getItem("isLoggedIn") === "true") {
