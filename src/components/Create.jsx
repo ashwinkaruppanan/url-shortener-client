@@ -50,9 +50,13 @@ const Create = () => {
         long_url: createLinkData.destination,
         short_url_key: createLinkData.back_half.replace(/\s/g, ""),
       };
-      const response = await axios.post(`${api}/create-url`, data, {
-        withCredentials: true,
-      });
+      const response = await axios.post(
+        "https://reago-backend.up.railway.app/create-url",
+        data,
+        {
+          withCredentials: true,
+        }
+      );
 
       if (response.status === 201) {
         navigate("/");

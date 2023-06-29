@@ -18,9 +18,12 @@ const Dashboard = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`${api}/get-all-urls`, {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://reago-backend.up.railway.app/get-all-urls",
+          {
+            withCredentials: true,
+          }
+        );
 
         if (response.data.length > 0) {
           setAllLinksData(response.data);

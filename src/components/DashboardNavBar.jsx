@@ -40,9 +40,12 @@ const DashboardNavBar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get(`${api}/logout`, {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://reago-backend.up.railway.app/logout",
+        {
+          withCredentials: true,
+        }
+      );
 
       if (response.status === 200) {
         localStorage.clear();

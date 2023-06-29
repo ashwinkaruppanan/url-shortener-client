@@ -58,9 +58,13 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post(`${api}/login`, loginData, {
-        withCredentials: true,
-      });
+      const response = await axios.post(
+        "https://reago-backend.up.railway.app/login",
+        loginData,
+        {
+          withCredentials: true,
+        }
+      );
 
       if (response.status === 200) {
         localStorage.setItem("isLoggedIn", true);

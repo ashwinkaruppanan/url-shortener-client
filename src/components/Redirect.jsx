@@ -10,9 +10,12 @@ const Redirect = () => {
       const currentURL = window.location.href;
       const lastPart = currentURL.substring(currentURL.lastIndexOf("/") + 1);
       try {
-        const response = await axios.get(`${api}/${lastPart}`, {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          `https://reago-backend.up.railway.app/${lastPart}`,
+          {
+            withCredentials: true,
+          }
+        );
 
         if (response.status === 200) {
           window.location.href = response.data;

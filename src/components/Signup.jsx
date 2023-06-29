@@ -70,7 +70,10 @@ const Signup = () => {
       const instance = axios.create({
         withCredentials: true,
       });
-      const response = await instance.post(`${api}/signup`, signupData);
+      const response = await instance.post(
+        "https://reago-backend.up.railway.app/signup",
+        signupData
+      );
 
       if (response.status === 201) {
         localStorage.setItem("isLoggedIn", true);
