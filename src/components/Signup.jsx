@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Signup = () => {
   const navigate = useNavigate();
-  const api = "https://reago-backend.up.railway.app";
+  const api = "https://reago.up.railway.app";
 
   useEffect(() => {
     if (localStorage.getItem("isLoggedIn") === "true") {
@@ -71,7 +71,7 @@ const Signup = () => {
         withCredentials: true,
       });
       const response = await instance.post(
-        "https://reago-backend.up.railway.app/signup",
+        "https://reago.up.railway.app/signup",
         signupData
       );
 

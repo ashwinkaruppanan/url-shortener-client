@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const Redirect = () => {
   const [urlError, setUrlError] = useState(false);
-  const api = "https://reago-backend.up.railway.app";
+  const api = "https://reago.up.railway.app";
 
   useEffect(() => {
     const checkUrl = async () => {
@@ -11,7 +11,7 @@ const Redirect = () => {
       const lastPart = currentURL.substring(currentURL.lastIndexOf("/") + 1);
       try {
         const response = await axios.get(
-          `https://reago-backend.up.railway.app/${lastPart}`,
+          `https://reago.up.railway.app/${lastPart}`,
           {
             withCredentials: true,
           }

@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const DashboardNavBar = () => {
-  const api = "https://reago-backend.up.railway.app";
+  const api = "https://reago.up.railway.app";
   const navigate = useNavigate();
 
   const ref = useRef();
@@ -40,12 +40,9 @@ const DashboardNavBar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get(
-        "https://reago-backend.up.railway.app/logout",
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get("https://reago.up.railway.app/logout", {
+        withCredentials: true,
+      });
 
       if (response.status === 200) {
         localStorage.clear();
@@ -53,24 +50,24 @@ const DashboardNavBar = () => {
       }
     } catch (error) {
       console.log(error);
-      if (error.response.status === 401) {
-        try {
-          const response = await axios.post(`${api}/refresh`, null, {
-            withCredentials: true,
-            headers: {
-              "refresh-token": localStorage.getItem("refresh"),
-            },
-          });
+      // if (error.response.status === 401) {
+      //   try {
+      //     const response = await axios.post(`${api}/refresh`, null, {
+      //       withCredentials: true,
+      //       headers: {
+      //         "refresh-token": localStorage.getItem("refresh"),
+      //       },
+      //     });
 
-          if (response.status === 200) {
-            document.getElementById("logout").click();
-          }
-        } catch (error) {
-          console.log(error);
-          localStorage.clear();
-          navigate("/login");
-        }
-      }
+      //     if (response.status === 200) {
+      //       document.getElementById("logout").click();
+      //     }
+      //   } catch (error) {
+      //     console.log(error);
+      //     localStorage.clear();
+      //     navigate("/login");
+      //   }
+      // }
     }
   };
 

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const api = "https://reago-backend.up.railway.app";
+  const api = "https://reago.up.railway.app";
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "https://reago-backend.up.railway.app/login",
+        "https://reago.up.railway.app/login",
         loginData,
         {
           withCredentials: true,

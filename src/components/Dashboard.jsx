@@ -14,12 +14,12 @@ const Dashboard = () => {
   const [propData, setPropData] = useState();
   let reverseData = allLinksData.reverse();
 
-  const api = "https://reago-backend.up.railway.app";
+  const api = "https://reago.up.railway.app/";
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await axios.get(
-          "https://reago-backend.up.railway.app/get-all-urls",
+          "https://reago.up.railway.app/get-all-urls",
           {
             withCredentials: true,
           }

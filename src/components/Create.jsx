@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Create = () => {
   const navigate = useNavigate();
-  const api = "https://reago-backend.up.railway.app";
+  const api = "https://reago.up.railway.app/";
 
   const [error, setError] = useState("");
 
@@ -51,7 +51,7 @@ const Create = () => {
         short_url_key: createLinkData.back_half.replace(/\s/g, ""),
       };
       const response = await axios.post(
-        "https://reago-backend.up.railway.app/create-url",
+        "https://reago.up.railway.app/create-url",
         data,
         {
           withCredentials: true,
