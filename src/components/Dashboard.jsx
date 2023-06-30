@@ -40,7 +40,7 @@ const Dashboard = () => {
   }, []);
 
   const Loading = () => (
-    <div>
+    <div className="text-white">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
