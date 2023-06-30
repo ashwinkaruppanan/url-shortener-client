@@ -71,6 +71,7 @@ const Login = () => {
         localStorage.setItem("user_name", response.data.full_name);
         localStorage.setItem("email", response.data.email);
         localStorage.setItem("refresh", response.data.refresh_token);
+        await new Promise((r) => setTimeout(r, 2000));
         navigate("/dashboard");
       }
     } catch (error) {
