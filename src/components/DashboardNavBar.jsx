@@ -75,7 +75,7 @@ const DashboardNavBar = () => {
     <div className="px-9 py-6 shadow-md shadow-gray-500 lg:px-44 ">
       <div className="flex items-center justify-between ">
         <Link to="/dashboard">
-          <h2 className=" cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 text-2xl font-semibold md:text-4xl">
+          <h2 className=" cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 text-2xl font-semibold md:text-4xl lg:text-2xl">
             REAGO
           </h2>
         </Link>
