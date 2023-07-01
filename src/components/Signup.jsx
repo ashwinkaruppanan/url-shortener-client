@@ -98,13 +98,13 @@ const Signup = () => {
   return (
     <div>
       <div className="px-9 py-6 lg:px-44">
-        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 font-semibold text-2xl md:text-4xl mb-6">
+        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 font-semibold text-2xl lg:text-2xl md:text-4xl mb-6">
           <Link to="/">REAGO</Link>
         </h2>
         <hr />
       </div>
       <div className="text-center">
-        <h2 className="text-white text-4xl font-medium">
+        <h2 className="text-white text-4xl lg:text-2 font-medium">
           Sign up and start shortening
         </h2>
         <p className="text-white mt-5">Already have an account?</p>
@@ -113,7 +113,7 @@ const Signup = () => {
         </p>
       </div>
       <div className="sm:flex justify-center w-full">
-        <div className="text-white px-9 mt-8 ]">
+        <div className="text-white px-9 mt-8 ">
           <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="full_name">Full Name</label>

@@ -89,7 +89,7 @@ const Login = () => {
   return (
     <div>
       <div className="px-9 py-6 lg:px-44">
-        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 text-2xl font-semibold md:text-4xl mb-6">
+        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 text-2xl font-semibold md:text-4xl lg:text-2xl mb-6">
           <Link to="/">REAGO</Link>
         </h2>
         <hr />
