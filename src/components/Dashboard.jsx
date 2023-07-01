@@ -25,11 +25,11 @@ const Dashboard = () => {
           }
         );
 
-        if (response.data.length > 0) {
+        if (response === null) {
+          setDisplay("NoLinksToDisplay");
+        } else if (response.data.length > 0) {
           setAllLinksData(response.data);
           setDisplay("AllLinks");
-        } else if (response === null) {
-          setDisplay("NoLinksToDisplay");
         }
       } catch (err) {
         console.log(err);
