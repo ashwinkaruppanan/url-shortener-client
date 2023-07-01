@@ -25,6 +25,8 @@ const Dashboard = () => {
           }
         );
 
+        console.log(response);
+
         if (response.data.length > 0) {
           setAllLinksData(response.data);
           setDisplay("AllLinks");
