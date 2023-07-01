@@ -172,7 +172,7 @@ const Dashboard = () => {
 
   const AllLinks = () => (
     <div className="text-white px-4 py-6 lg:px-20 sm:px-14 sm:mt-6">
-      <h2 className="text-2xl font-semibold mb-2">Links</h2>
+      <h2 className="text-xl font-semibold mb-2">Links</h2>
       {reverseData.map((l, index) => (
         <Link link={l} key={index} />
       ))}
@@ -285,7 +285,7 @@ const Dashboard = () => {
       <div className="px-4 py-6 lg:px-20 sm:px-14 sm:mt-6">
         <button>
           <div
-            className="text-white font-semibold sm:text-xl flex items-center"
+            className="text-white font-semibold sm:text-lg flex items-center"
             onClick={() => setDisplay("AllLinks")}
           >
             <svg
