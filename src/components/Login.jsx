@@ -71,7 +71,8 @@ const Login = () => {
         localStorage.setItem("user_name", response.data.full_name);
         localStorage.setItem("email", response.data.email);
         localStorage.setItem("refresh", response.data.refresh_token);
-        navigate("/dashboard");
+        // navigate("/dashboard");
+        window.location.href = "/dashboard";
       }
     } catch (error) {
       if (error.code === "ERR_NETWORK") {
