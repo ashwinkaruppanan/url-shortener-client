@@ -61,7 +61,7 @@ const Dashboard = () => {
 
   const NoLinksToDisplay = () => (
     <>
-      <div className="px-9 py-6 lg:px-44">
+      <div className="px-9 py-6 lg:px-20">
         <div className="flex justify-center p-3 ">
           <img src={dashImg} alt="" className="sm:h-[600px] lg:h-[500px]" />
         </div>
@@ -171,7 +171,7 @@ const Dashboard = () => {
   };
 
   const AllLinks = () => (
-    <div className="text-white px-4 py-6 lg:px-44 sm:px-14 sm:mt-6">
+    <div className="text-white px-4 py-6 lg:px-20 sm:px-14 sm:mt-6">
       <h2 className="text-2xl font-semibold mb-2">Links</h2>
       {reverseData.map((l, index) => (
         <Link link={l} key={index} />
@@ -282,7 +282,7 @@ const Dashboard = () => {
     chartDataLocation.values = Object.values(prop.data.link.location);
 
     return (
-      <div className="px-4 py-6 lg:px-44 sm:px-14 sm:mt-6">
+      <div className="px-4 py-6 lg:px-20 sm:px-14 sm:mt-6">
         <button>
           <div
             className="text-white font-semibold sm:text-xl flex items-center"
