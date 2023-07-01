@@ -10,6 +10,10 @@ body {
   scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .glass-card {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
