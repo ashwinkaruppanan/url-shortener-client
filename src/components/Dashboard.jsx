@@ -25,13 +25,9 @@ const Dashboard = () => {
           }
         );
 
-        console.log(response);
-
-        if (response === null) {
-          console.log("no");
+        if (response.data === null) {
           setDisplay("NoLinksToDisplay");
         } else if (response.data.length > 0) {
-          console.log(res, "all");
           setAllLinksData(response.data);
           setDisplay("AllLinks");
         }
