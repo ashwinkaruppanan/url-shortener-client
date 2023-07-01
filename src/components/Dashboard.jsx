@@ -204,7 +204,7 @@ const Dashboard = () => {
     });
 
     // change the   link
-    let qrUrl = ` ${prop.data.link.short_url_key}`;
+    let qrUrl = `https://reago.netlify.app/${prop.data.link.short_url_key}`;
 
     const qrcode = <QRCodeCanvas id="qrCode" value={qrUrl} size={180} />;
 
