@@ -90,6 +90,9 @@ const Dashboard = () => {
     const [copy, setCopy] = useState("copy");
 
     const handleCopyClick = () => {
+      navigator.clipboard.writeText(
+        `https://reago.netlify.app/${prop.link.short_url_key}`
+      );
       setCopy("copied");
     };
 
@@ -177,11 +180,13 @@ const Dashboard = () => {
   );
 
   const LinkData = (prop) => {
-    console.log(prop.data);
     const [copy, setCopy] = useState("copy");
     const qrRef = useRef();
 
     const handleCopyClick = () => {
+      navigator.clipboard.writeText(
+        `https://reago.netlify.app/${prop.data.link.short_url_key}`
+      );
       setCopy("copied");
     };
 
