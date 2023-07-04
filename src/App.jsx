@@ -27,6 +27,7 @@ const App = () => {
 
   let isLoggedIn = false;
   const myCookieValue = getCookieValue("login");
+  console.log(myCookieValue);
   if (myCookieValue) {
     isLoggedIn = true;
   }
