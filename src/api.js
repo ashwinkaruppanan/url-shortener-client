@@ -1,1 +1,1 @@
-export default "https://reago.onrender.com/"
+export default "https://reago.onrender.com"
