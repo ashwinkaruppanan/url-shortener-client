@@ -11,15 +11,24 @@ import Create from "./components/Create";
 import Protected from "./components/Protected";
 import Redirect from "./components/Redirect";
 
-function getCookieValue(cookieName) {
-  const cookies = document.cookie.split(";");
-  for (let i = 0; i < cookies.length; i++) {
-    const cookie = cookies[i].trim();
-    if (cookie.startsWith(cookieName + "=")) {
-      return cookie.substring(cookieName.length + 1);
+function getCookieValue(name) {
+  // Split cookie string and get all individual name=value pairs in an array
+  var cookieArr = document.cookie.split(";");
+
+  // Loop through the array elements
+  for (var i = 0; i < cookieArr.length; i++) {
+    var cookiePair = cookieArr[i].split("=");
+
+    /* Removing whitespace at the beginning of the cookie name
+        and compare it with the given string */
+    if (name == cookiePair[0].trim()) {
+      // Decode the cookie value and return
+      return decodeURIComponent(cookiePair[1]);
     }
   }
-  return null; // Cookie not found
+
+  // Return null if not found
+  return null;
 }
 
 const App = () => {
