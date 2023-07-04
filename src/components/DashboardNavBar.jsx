@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import api_url from "../api";
 
 const DashboardNavBar = () => {
-  const api = "https://reago.up.railway.app";
+  const api = api_url;
   const navigate = useNavigate();
 
   const ref = useRef();
@@ -40,7 +41,7 @@ const DashboardNavBar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get("https://reago.up.railway.app/logout", {
+      const response = await axios.get(`${api}/logout`, {
         withCredentials: true,
       });
 

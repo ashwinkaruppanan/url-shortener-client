@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { QRCodeCanvas } from "qrcode.react";
 import Chart from "chart.js/auto";
 import axios from "axios";
+import api_url from "../api";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -14,16 +15,13 @@ const Dashboard = () => {
   const [propData, setPropData] = useState();
   let reverseData = allLinksData.reverse();
 
-  const api = "https://reago.up.railway.app/";
+  const api = api_url;
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(
-          "https://reago.up.railway.app/get-all-urls",
-          {
-            withCredentials: true,
-          }
-        );
+        const response = await axios.get(`${api}/get-all-urls`, {
+          withCredentials: true,
+        });
 
         if (response.data === null) {
           setDisplay("NoLinksToDisplay");

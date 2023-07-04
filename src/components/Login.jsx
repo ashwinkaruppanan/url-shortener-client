@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import api_url from "../api";
 
 const Login = () => {
-  const api = "https://reago.up.railway.app";
+  const api = api_url;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -58,13 +59,9 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post(
-        "https://reago.up.railway.app/login",
-        loginData,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.post(`${api}/login`, loginData, {
+        withCredentials: true,
+      });
 
       if (response.status === 200) {
         localStorage.setItem("isLoggedIn", true);

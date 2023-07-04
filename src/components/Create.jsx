@@ -2,10 +2,11 @@ import { useState } from "react";
 import DashboardNavBar from "./DashboardNavBar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import api_url from "../api";
 
 const Create = () => {
   const navigate = useNavigate();
-  const api = "https://reago.up.railway.app/";
+  const api = api_url;
 
   const [error, setError] = useState("");
 
@@ -50,13 +51,9 @@ const Create = () => {
         long_url: createLinkData.destination,
         short_url_key: createLinkData.back_half.replace(/\s/g, ""),
       };
-      const response = await axios.post(
-        "https://reago.up.railway.app/create-url",
-        data,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.post(`${api}/create-url`, data, {
+        withCredentials: true,
+      });
 
       if (response.status === 201) {
         navigate("/");

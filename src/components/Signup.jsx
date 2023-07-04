@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import api_url from "../api";
 
 const Signup = () => {
   const navigate = useNavigate();
-  const api = "https://reago.up.railway.app";
+  const api = api_url;
 
   useEffect(() => {
     if (localStorage.getItem("isLoggedIn") === "true") {
@@ -70,10 +71,7 @@ const Signup = () => {
       const instance = axios.create({
         withCredentials: true,
       });
-      const response = await instance.post(
-        "https://reago.up.railway.app/signup",
-        signupData
-      );
+      const response = await instance.post(`${api}/signup`, signupData);
 
       if (response.status === 201) {
         localStorage.setItem("isLoggedIn", true);
