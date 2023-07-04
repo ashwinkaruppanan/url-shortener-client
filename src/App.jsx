@@ -11,11 +11,23 @@ import Create from "./components/Create";
 import Protected from "./components/Protected";
 import Redirect from "./components/Redirect";
 
+function getCookieValue(cookieName) {
+  const cookies = document.cookie.split(";");
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith(cookieName + "=")) {
+      return cookie.substring(cookieName.length + 1);
+    }
+  }
+  return null; // Cookie not found
+}
+
 const App = () => {
   // const navigate = useNavigate();
 
   let isLoggedIn = false;
-  if (localStorage.getItem("isLoggedIn") === "true") {
+  const myCookieValue = getCookieValue("login");
+  if (myCookieValue) {
     isLoggedIn = true;
   }
 
