@@ -18,6 +18,7 @@ const Dashboard = () => {
   const api = api_url;
   useEffect(() => {
     const getData = async () => {
+      console.log(api);
       try {
         const response = await axios.get(`${api}/get-all-urls`, {
           withCredentials: true,
