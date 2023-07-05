@@ -11,33 +11,28 @@ import Create from "./components/Create";
 import Protected from "./components/Protected";
 import Redirect from "./components/Redirect";
 
-function getCookieValue(name) {
-  // Split cookie string and get all individual name=value pairs in an array
-  var cookieArr = document.cookie.split(";");
-
-  // Loop through the array elements
-  for (var i = 0; i < cookieArr.length; i++) {
-    var cookiePair = cookieArr[i].split("=");
-
-    /* Removing whitespace at the beginning of the cookie name
-        and compare it with the given string */
-    if (name == cookiePair[0].trim()) {
-      // Decode the cookie value and return
-      return decodeURIComponent(cookiePair[1]);
-    }
-  }
-
-  // Return null if not found
-  return null;
-}
-
 const App = () => {
   // const navigate = useNavigate();
 
   let isLoggedIn = false;
-  const myCookieValue = getCookieValue("login");
-  console.log(myCookieValue);
-  if (myCookieValue) {
+
+  // Get the stored expiry time from localStorage
+  const storedTime = localStorage.getItem("time_expiry");
+
+  // Convert the stored time back to a Date object
+  const expiryTime = new Date(storedTime);
+
+  // Get the current time
+  const currentTime = new Date();
+
+  // Compare the current time with the expiry time
+  if (currentTime > expiryTime) {
+    // Current time is less than the expiry time
+    localStorage.clear();
+  }
+
+  const loggedIn = localStorage.getItem("isLoggedIn");
+  if (loggedIn === "true") {
     isLoggedIn = true;
   }
 

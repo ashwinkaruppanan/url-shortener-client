@@ -68,6 +68,17 @@ const Login = () => {
         localStorage.setItem("user_name", response.data.full_name);
         localStorage.setItem("email", response.data.email);
         localStorage.setItem("refresh", response.data.refresh_token);
+        // Get the current time
+        const currentTime = new Date();
+
+        // Add 9 hours and 55 minutes to the current time
+        const expiryTime = new Date(
+          currentTime.getTime() + (9 * 60 + 55) * 60000
+        );
+
+        // Store the expiry time in localStorage
+        localStorage.setItem("time_expiry", expiryTime.toString());
+
         // navigate("/dashboard");
         window.location.href = "/dashboard";
       }
